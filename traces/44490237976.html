@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>pi-obs — collected traces</title>
+<style>
+ body{font:13px/1.45 -apple-system,system-ui,sans-serif;margin:24px;color:#1a1a2e;background:#fafafa}
+ h1{font-size:18px;margin:0 0 4px} h2{font-size:15px;margin:24px 0 8px} h3{font-size:13px;margin:16px 0 8px}
+ .sub{color:#666;margin-bottom:16px}
+ .cards{display:flex;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+ .card{background:#fff;border:1px solid #e2e2ea;border-radius:8px;padding:10px 16px}
+ .card b{display:block;font-size:20px} .card span{color:#666;font-size:12px}
+ table{border-collapse:collapse;width:100%;background:#fff;border:1px solid #e2e2ea;border-radius:8px}
+ th,td{padding:5px 10px;text-align:left;border-bottom:1px solid #eee}
+ th{background:#f3f3f8;font-size:12px;position:sticky;top:0}
+ .mono{font-family:ui-monospace,monospace;font-size:12px;color:#555}
+ .dim{color:#999;font-size:12px}
+ .num{text-align:right;font-variant-numeric:tabular-nums}
+ .tl{width:34%} .bar{height:12px;border-radius:3px;min-width:2px;position:relative}
+ tr.err td{color:#b00020}
+ details.session{background:#fff;border:1px solid #e2e2ea;border-radius:8px;margin:10px 0;padding:0}
+ details.session>summary{padding:10px 14px;cursor:pointer;list-style:revert;font-size:13px}
+ details.session[open]>summary{border-bottom:1px solid #eee;background:#f9f9fd;border-radius:8px 8px 0 0}
+ details.session>summary::-webkit-details-marker{color:#888}
+ details.session>:not(summary){margin:14px}
+ .note{color:#777;font-size:12px;margin:8px 0}
+</style></head><body>
+<h1>pi-obs — collected traces</h1>
+<div class="sub">/tmp/collected.jsonl · rendered 2026-11-19T08:45:29.327Z</div>
+<h2>Global summary — the whole file</h2>
+<div class="cards">
+ <div class="card"><b>1</b><span>session</span></div>
+ <div class="card"><b>7</b><span>spans</span></div>
+ <div class="card"><b>4.46s</b><span>window</span></div>
+ <div class="card"><b>7</b><span>metrics</span></div>
+ <div class="card"><b>0</b><span>errors</span></div>
+</div>
+<h3>totals — metrics (whole file)</h3><table><tr><th>metric</th><th class="num">value</th><th>unit</th><th class="num">points</th></tr><tr><td>pi.messages</td><td class="num">42</td><td>{message}</td><td class="num">42</td></tr>
+<tr><td>pi.model.time_to_first_token</td><td class="num">2,530</td><td>ms</td><td class="num">2</td></tr>
+<tr><td>pi.model.requests</td><td class="num">2</td><td>{request}</td><td class="num">2</td></tr>
+<tr><td>pi.tokens</td><td class="num">4,496</td><td>{token}</td><td class="num">8</td></tr>
+<tr><td>pi.model.duration</td><td class="num">4,417</td><td>ms</td><td class="num">2</td></tr>
+<tr><td>pi.tool.calls</td><td class="num">1</td><td>{call}</td><td class="num">1</td></tr>
+<tr><td>pi.tool.duration</td><td class="num">8</td><td>ms</td><td class="num">1</td></tr></table>
+
+<h2>Sessions — one expandable section each</h2>
+<details class="session" open>
+<summary><span class="mono">01a1f2fb-638f-7258-b707-a55b83b7a5f8</span> · 7 spans · 4.46s · <span class="dim">/home/runner/.pi/agent/sessions/--home-runner-work-pi-tools-pi-tools--/2026-11-19T08-45-23-729Z_01a1f2fb-638f-7258-b707-a55b83b7a5f8.jsonl</span></summary>
+<div class="cards">
+ <div class="card"><b>7</b><span>spans</span></div>
+ <div class="card"><b>4.46s</b><span>session window</span></div>
+ <div class="card"><b>0</b><span>errors</span></div>
+ <div class="card"><b>7</b><span>metrics</span></div>
+</div>
+<table>
+ <tr><th>span</th><th>service</th><th>trace</th><th>parent</th><th class="num">duration</th><th class="num">offset</th><th>timeline</th></tr>
+ <tr class=""><td>pi.session</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">root</td><td class="num">4.46s</td><td class="num">0.0ms</td><td class="tl"><div class="bar" style="margin-left:0.00%;width:100.00%;background:hsl(129, 65%, 45%)" title="pi.session · pi-agent · pi-obs spans — 4.46s (offset 0.0ms)"></div></td></tr>
+<tr class=""><td>pi.run</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">4c69d96c</td><td class="num">4.46s</td><td class="num">2.0ms</td><td class="tl"><div class="bar" style="margin-left:0.04%;width:99.96%;background:hsl(129, 65%, 45%)" title="pi.run · pi-agent · pi-obs spans — 4.46s (offset 2.0ms)"></div></td></tr>
+<tr class=""><td>pi.turn</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">bb296d0e</td><td class="num">1.64s</td><td class="num">4.0ms</td><td class="tl"><div class="bar" style="margin-left:0.09%;width:36.73%;background:hsl(129, 65%, 45%)" title="pi.turn · pi-agent · pi-obs spans — 1.64s (offset 4.0ms)"></div></td></tr>
+<tr class=""><td>pi.model</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">5a22fd66</td><td class="num">1.60s</td><td class="num">30.0ms</td><td class="tl"><div class="bar" style="margin-left:0.67%;width:35.88%;background:hsl(129, 65%, 45%)" title="pi.model · pi-agent · pi-obs spans — 1.60s (offset 30.0ms)"></div></td></tr>
+<tr class=""><td>pi.tool read</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">5a22fd66</td><td class="num">11.0ms</td><td class="num">1.63s</td><td class="tl"><div class="bar" style="margin-left:36.55%;width:0.30%;background:hsl(129, 65%, 45%)" title="pi.tool read · pi-agent · pi-obs spans — 11.0ms (offset 1.63s)"></div></td></tr>
+<tr class=""><td>pi.turn</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">bb296d0e</td><td class="num">2.82s</td><td class="num">1.65s</td><td class="tl"><div class="bar" style="margin-left:36.86%;width:63.09%;background:hsl(129, 65%, 45%)" title="pi.turn · pi-agent · pi-obs spans — 2.82s (offset 1.65s)"></div></td></tr>
+<tr class=""><td>pi.model</td><td>pi-agent</td><td class="mono">1c64d8cf…</td><td class="mono">78567d0a</td><td class="num">2.81s</td><td class="num">1.65s</td><td class="tl"><div class="bar" style="margin-left:36.91%;width:63.05%;background:hsl(129, 65%, 45%)" title="pi.model · pi-agent · pi-obs spans — 2.81s (offset 1.65s)"></div></td></tr>
+</table>
+<h3>metrics (this session)</h3><table><tr><th>metric</th><th class="num">value</th><th>unit</th><th class="num">points</th></tr><tr><td>pi.messages</td><td class="num">42</td><td>{message}</td><td class="num">42</td></tr>
+<tr><td>pi.model.requests</td><td class="num">2</td><td>{request}</td><td class="num">2</td></tr>
+<tr><td>pi.tokens</td><td class="num">4,496</td><td>{token}</td><td class="num">8</td></tr>
+<tr><td>pi.model.duration</td><td class="num">4,417</td><td>ms</td><td class="num">2</td></tr>
+<tr><td>pi.tool.calls</td><td class="num">1</td><td>{call}</td><td class="num">1</td></tr>
+<tr><td>pi.tool.duration</td><td class="num">8</td><td>ms</td><td class="num">1</td></tr>
+<tr><td>pi.model.time_to_first_token</td><td class="num">2,530</td><td>ms</td><td class="num">2</td></tr></table>
+</details>
+</body></html>
